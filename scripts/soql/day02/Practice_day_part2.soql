@@ -1,0 +1,52 @@
+// GEt all Contact Name and Account Name that contact belong to
+//Filter the Contact to only show Contact with Account
+
+//SELECT  Name, AccountId, Account.AnnualRevenue
+//FROM Contact
+
+//Child to Parent Query 
+//SELECT Name , AccountId, Account.Name
+//FROM Contact
+//WHERE AccountId != null 
+
+
+// Get all Case Subject and Account Name contact belong to
+//Filter the Contact to only show Contact with Account
+
+//SELECT  Subject, Account.Name
+//FROM Case
+//Where Account.Name != Null
+
+// Get all the case records Subject and Account Name
+//  that belong to Account with Name 
+// starts with United 
+
+//SELECT Subject, Account.Name , Contact.Name, CreatedBy.Name
+//FROM Case
+//WHERE Account.Name LIKE 'United%'
+
+//Gett all opportunity Name,Owner Name, Account Name 
+//from opportunity
+
+//SELECT  Name, Owner.Name,Account.Name
+//FROM Opportunity
+
+
+//SELECT Name , Price__c , Contact__r.Name
+//FROM Book__c
+//ORDER BY Contact__r.Name ASC NULLS LAST
+
+/// Get All the Books Name, Price, Contact Name 
+// Sort the result by Conact Name and show empty values on the botton 
+// Filter the result to show only Books with Contact Name Snow 
+
+//SELECT Name , Price__c , Contact__r.Name
+//FROM Book__c
+//WHERE Contact__r.Name  = 'Snow'
+
+
+//se aggregate functions in a GROUP BY clause in SOQL queries to generate reports for analysis. 
+//Aggregate functions include AVG(), COUNT(), MIN(), MAX(), SUM(), and more.
+
+SELECT COUNT(Id), COUNT_DISTINCT(NAME),SUM(Amount), MAX(Amount), MIN(Amount), AVG(Amount)
+FROM OPPORTUNITY

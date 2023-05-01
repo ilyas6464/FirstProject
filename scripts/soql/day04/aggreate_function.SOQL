@@ -1,0 +1,81 @@
+// Aggregate Function:
+//COUNT(Id), COUNT_DISTING(NAME),SUM(AMOUNT),,MAX(Amount) , MIN(Amount),AVG(Amount)
+
+//SELECT COUNT(ID) FROM ACOUNT
+
+//SELECT  COUNT(id), COUNT_DISTINCT(Name), SUM(Amount),MAX(Amount) , MIN(Amount),AVG(Amount)
+//FROM Opportunity 
+
+// do the same for Account Object
+//SELECT COUNT(Id), COUNT_DISTINCT(Name), SUM(AnnualRevenue), MAX(AnnualRevenue), MIN(AnnualRevenue), AVG(AnnualRevenue)
+//FROM Account
+
+
+//Count the Opportunities In Closed Won Stage
+
+//SELECT  COUNT(Id)
+//FROM Opportunity
+//WHERE StageName = 'Closed Won'
+
+//Count the Opportunities In Closed Lost Stage
+
+//SELECT  COUNT(Id)
+//FROM Opportunity
+//WHERE StageName = 'Closed Lost'
+
+
+//SELECT StageName , COUNT(Id)
+//FROM Opportunity
+//GROUP BY StageName
+
+// if you use aggregate function with any additional field in Select line
+// it must be grouped by that field or it will not work
+// anytime you add new field other than the field in group by, it will not work
+// as long as it does not show up in group by field list
+
+// Get the count  of Leads of eachLeadsource
+//SELECT LeadSource,COUNT(Id)
+//FROM Lead
+//GROUP BY LeadSource
+
+// Get the count  of Leads of State
+//SELECT State,COUNT(Id)
+//FROM Lead
+//GROUP BY State
+
+// Get the count  of Leads for each State
+// only retunr the row if the count more than OR equa to 2 
+
+//ELECT State,COUNT(Id)
+//FROM Lead
+//GROUP BY State
+//HAVING COUNT(Id)>=2
+
+// Get the count  of the Leads for each Status
+// only retunr the row if the less than 5
+
+//SELECT  Status, COUNT(Id)
+//FROM Lead 
+//GROUP BY Status
+//HAVING COUNT(Id)< 5
+
+
+
+// Get All the count of Account and
+//The sum of the AnnualRevenue
+//for each Rating (Hot,Cold,Warm,Null)
+
+//SELECT  Rating, COUNT(Id),SUM(AnnualRevenue)
+//FROM Account
+//GROUP BY Rating
+//HAVING  Rating != Null
+
+// Since the condition here 
+// is not on alreday aggreate result
+// we can simple filter it out
+// Before even using GROUP BY with WHERE
+SELECT  Rating, COUNT(Id),SUM(AnnualRevenue)
+FROM Account
+WHERE Rating != NULL
+GROUP BY Rating 
+

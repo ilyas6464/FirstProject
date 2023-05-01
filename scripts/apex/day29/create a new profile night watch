@@ -1,0 +1,13 @@
+/**4. Create a new Profile NightWatcher (by cloning standard user profile) 
+   - Remove Account and Opportunity delete access
+5. Create a new user Jon Snow in your org with NightWatcher profile
+6. Assign yourself CEO Role and Assign Jon snow Western Sales Team
+ */
+
+// 1. Disable existing BookTrigger
+// 2. Create a Trigger called BookOwnerTrigger
+// This trigger listen for two events before insert, before update
+// This trigger has below logic
+// Whenever book is created or updated 
+// if the contact look up field is not empty 
+// assign the owner of this book to the same owner of Contact Record 

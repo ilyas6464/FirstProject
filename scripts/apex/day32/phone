@@ -1,0 +1,54 @@
+//public is a keyword to define access level 
+//known as access modifier, there are couple of them we will learn later
+//Private(meaning it's accessible in same class)
+//If do not use public on variable (or method)
+//it's automatically private
+//class : indicate this is a class 
+//phone : identifier ,the name of the class 
+// { any code need to go in here ,can not go out side }
+// The moment a class exists, it can be a DataType
+// meaning , you can create a variable of that type
+// you can create a new instance (object) of that type and assign to the variable
+// and much more 
+public class Phone{
+    // a phone has below 
+    // attributes or characteristics 
+    // brand, price, memory size 
+    // instance variable | field
+    public String brand ; 
+    public Decimal price;
+    public Integer memorySize;
+}
+
+
+
+Enonymus window/////
+// how do we open this window 
+// Ctr + e
+
+// since we have a class called Phone
+// now we have a data type called Phone
+// we can use it to create a variable
+// we can create an instance of phone
+// and assign it to the variable , 
+// just like we did for Account, Contact
+// and List , Set , and so on 
+Phone p1 = new Phone(); 
+p1.brand = 'Apple' ; 
+p1.price = 899.99 ; 
+p1.memorySize = 128 ; 
+
+System.debug(p1) ; 
+p1.price = 799.45 ; 
+System.debug(p1) ; 
+
+// Create a phone variable and assign Phone Object to it 
+// create an instance of Phone and save it to a variable 
+// Instanciate a Phone and save it to a variable 
+Phone p2 = new Phone(); 
+p2.brand = 'Nokia';
+p2.price = 499;
+p2.memorySize = 512 ; 
+System.debug(p2);
+// print out second phone Brand 
+System.debug(p2.brand);

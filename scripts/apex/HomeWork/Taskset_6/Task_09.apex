@@ -1,0 +1,1 @@
+Create an Boolean Array with 10 elements and count the the number of true value

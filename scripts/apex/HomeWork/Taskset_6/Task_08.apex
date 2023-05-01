@@ -1,0 +1,1 @@
+Create an String Array with 10 elements and print them in reverse order
