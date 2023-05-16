@@ -1,16 +1,38 @@
 public class AccountUpdateAsync implements Queueable{
     
-    String  decription;
+    String description ; 
+    List<Account> accLstToProcess ; 
 
 
-    public AccountUpdateAsync(String decription){
-        this.decription = decription;
+    public AccountUpdateAsync(String description, List<Account> accLstToProcess) {
+        this.description = description ; 
+        this.accLstToProcess = accLstToProcess ; 
     }
-    public void execute(QueueableContext context){
-        // awsome code here
-        System.debug('Running some awsome code in AccountUpdateAsync'); 
-        //Print Out value of decription field
-        System.debug('this.decription value is : ' + this.decription);
+
+
+    public void execute(QueueableContext context) {
+        // awesome code here
+        System.debug('Running some awesome code in AccountUpdateAsync'); 
+        // print out value of description field 
+        System.debug('description value is : ' + this.description);
+
+        // update the description field of the List of account to 
+        // the description provided. 
+
+        for(Account each : accLstToProcess) {
+            
+            each.Description = this.description ; 
+
+        }
+        update accLstToProcess ; 
+
+        // Right after we are done with account update 
+        // we want to perform another aysnc code 
+        // that need to happen right after account update
+
+        TasksAfterAccountUpdate tq = new TasksAfterAccountUpdate(); 
+        System.enqueueJob(tq); 
+
         
     }
 
