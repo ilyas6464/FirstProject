@@ -9,27 +9,15 @@ export default class Practice4 extends LightningElement {
         return this.num1 + this.num2; 
     }
 
-    get multiplicationResult() {
-        return this.num1 * this.num2; 
-    }
-
-    get substractionResult() {
-        return this.num1 - this.num2; 
-    }
-    get divisionResult() {
-        return this.num1 / this.num2; 
-    }
-
-
 
     handleNum1Change(event) {
         // set the value of num1 to what user typed
-        this.num1 = parseInt( event.target.value) ; 
+        this.num1 =  parseFloat( event.target.value ) ; 
     }
 
     handleNum2Change(event) {
         // set the value of num2 to what user typed
-        this.num2 = parseInt( event.target.value); 
+        this.num2 = parseFloat( event.target.value ); 
     }
 
 
