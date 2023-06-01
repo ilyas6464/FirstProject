@@ -1,6 +1,6 @@
 <template>
     
-    <lightning-card title="Wired Data from Apex" icon-name="standard:account">
+    <lightning-card title="Wired Data from Apex into function" icon-name="standard:account">
         <div class="slds-var-m-around_medium">
 
             <!-- a temp button to console log wiredAccounts property
@@ -16,10 +16,10 @@
               create a p tag with key attribute provide unique id 
               show text Account name is xxx Annual Revenue is yyy
             -->
-            <template lwc:if={wiredAccounts.data} >
+            <template lwc:if={accounts} >
                 <!-- for each directive to loop an array 
                 our array happen to be in wiredAccounts.data just like foodArray -->
-                <template for:each={wiredAccounts.data} for:item="bla">
+                <template for:each={accounts} for:item="bla">
 
                     <p key={bla.Id}> 
                         Account name is  {bla.Name} |  Annual Revenue is {bla.AnnualRevenue}
@@ -34,3 +34,4 @@
     </lightning-card>
 
 </template>
+
