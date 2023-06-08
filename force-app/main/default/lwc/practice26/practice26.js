@@ -3,12 +3,21 @@ import { LightningElement, wire } from "lwc";
 import NAME_FIELD from "@salesforce/schema/Opportunity.Name";
 import STAGE_FIELD from "@salesforce/schema/Opportunity.StageName";
 import CLOSE_DATE_FIELD from "@salesforce/schema/Opportunity.CloseDate";
+import USER_ID from '@salesforce/user/Id';
+
+import USERNAME_FIELD from "@salesforce/schema/User.Username";
+import EMAIL_FIELD from "@salesforce/schema/User.Email";
+
+
+
+
 
 
 export default class Practice26 extends LightningElement {
 
 
-    recordId = '006Dm000004D5XJIA0';  // use your own recordId
+    recordId = '006Dn000006nNInIAM';  // use your own recordId
+    userId = USER_ID; // assign imported user id into the property so we can use it next 
 
     // according to above recordId get the entire opp record and wire into below property
     // salesforce provide set of javascript methods to get single data
@@ -17,25 +26,37 @@ export default class Practice26 extends LightningElement {
     // one common js method is getRecord( recordId , fields you want in array)
     // and we need to use @wire to wire that into property or function
 
-    @wire(getRecord, {recordId : '$recordId' , fields:[ NAME_FIELD,STAGE_FIELD,CLOSE_DATE_FIELD ] }  )
+    @wire(getRecord, {
+        recordId: '$recordId',
+        fields: [NAME_FIELD, STAGE_FIELD, CLOSE_DATE_FIELD]
+    })
     opp; 
-
     // easier way to get the field value out of the wired result from getRecord method is 
     // using the getFieldValue method from lwc by providing the wired result and the field name you want
-
     get nameValue() {
-        return  getFieldValue(this.opp.data ,  NAME_FIELD  ) ; 
+        return getFieldValue(this.opp.data, NAME_FIELD); 
     }
-
     get stageNameValue() {
         return  getFieldValue(this.opp.data ,  STAGE_FIELD  ) ; 
     }
 
+    // get user object by using the user id
+    @wire(getRecord, { recordId: '$userId', fields:[USERNAME_FIELD, EMAIL_FIELD]  })
+    currentUser; 
 
-    // Create a getter to get string version of opp property above 
-    get oppInString() {
-        return JSON.stringify(this.opp, null, 2); 
+    get username() {
+        return getFieldValue(this.currentUser.data, USERNAME_FIELD); 
     }
+    get userEmail() {
+        return getFieldValue(this.currentUser.data, EMAIL_FIELD); 
+    }
+
+
+
+    //  Create a getter to get string version of opp property above 
+    // get oppInString() {
+    //     return JSON.stringify(this.opp.data, null, 2); 
+    // }
 
 
 }
