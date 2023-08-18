@@ -4,6 +4,7 @@ import getJoke from "@salesforce/apex/ReviewJokeController.getJoke";
 
 export default class ReviewJoke extends LightningElement {
 
+    
     joke; // = "Something Funny";
 
     // @wire(getJoke)
@@ -29,6 +30,8 @@ export default class ReviewJoke extends LightningElement {
         } ); 
 
     }
+
+    
 
     constructor() {
         super(); 
