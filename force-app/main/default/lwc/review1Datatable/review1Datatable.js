@@ -13,7 +13,7 @@ const COLS = [
       },
     { label: 'Annual Revenue', fieldName: 'AnnualRevenue', type: 'currency' }
 ];
-
+ 
 
 export default class Review1Datatable extends LightningElement {
 
