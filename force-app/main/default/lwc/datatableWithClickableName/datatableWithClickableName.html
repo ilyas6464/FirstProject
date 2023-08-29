@@ -1,0 +1,21 @@
+<!-- sldsValidatorIgnore -->
+<template>
+    <lightning-card title="Datatable With Clickable Name" icon-name="custom:custom63">
+        <div class="slds-m-around_medium">
+            <template lwc:if={accounts}>
+                <lightning-datatable
+                    key-field="Id"
+                    data={accounts}
+                    columns={columns}
+                    hide-checkbox-column
+                ></lightning-datatable> 
+            </template>
+            <template lwc:if={error}>
+                <c-error-panel
+                    errors={error}
+                    friendly-message="Error getting Accounts"
+                ></c-error-panel>
+            </template>
+        </div>
+    </lightning-card>
+</template>

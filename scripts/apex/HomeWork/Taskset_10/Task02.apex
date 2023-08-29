@@ -1,5 +1,5 @@
 /*Create a String variable called message that contains a sentence with mixed case. 
-for example : 'APEX mAde iT Easy to wOrk With SAlesforce DAtabase'
+for example : 'APEX mAde iT Easy to wOrk With SAlesforce Database'
    - split to get List of String containing each words
    - use for loop to go though each items
       - make each item TitleCase (lookup capitalize method from String class)

@@ -1,21 +1,29 @@
- /**
- Write a program that takes a list of strings that represent the names of account owners, 
- and counts the number of times jon snow appears in the list.
- */
- 
- 
- List<String> accountOwners = new List<String>{'John White', 'Andy Young', 'Jon Snow', 'Avi Green', 'Jane Gray',
-                                            'Jon Snow', 'Josh Davis'};
+//  **  # Task Set 4**
 
-Integer countName= 0 ;
+// 9. Write a program that takes a list of strings that represent the names of account owners,
 
-for(String eachAccountOwner : accountOwners){
-    if(eachAccountOwner == 'Jon Snow'){
-        System.debug(eachAccountOwner);
-        countName += 1;
-    }
+List<String> accountOwners = new List<String>{
+  'John Smith',
+  'Jane Doe',
+  'Jon Snow',
+  'Samantha Lee',
+  'Alex Wong',
+  'Jon Snow',
+  'Emily Chen',
+  'Jon Snow',
+  'Rachel Garcia',
+  'John Smith'
+};
 
+// - counts the number of times jon snow appears in the list.
+Integer countOfJonSnow = 0 ; 
+
+for(String each : accountOwners) {
+  if(each=='jon snow'){
+    countOfJonSnow++ ; 
+  }
 }
-System.debug(countName);
+System.debug('countOfJonSnow value is : ' + countOfJonSnow); 
+// countOfJonSnow value is : 3
 
-
+  

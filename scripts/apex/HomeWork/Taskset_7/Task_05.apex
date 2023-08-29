@@ -1,18 +1,14 @@
-/*5. Write an Apex code that create List or Array of 5 Integer values. 
-   - double the value of each item 
-   - for example {1,4,6,4,6} => {2,8,12,8,12} */
+// **# Tasks Set 7 **
+// 5. Write an Apex code that create List or Array of 5 Integer values. 
+Integer[] numArr = new Integer[]{1,4,6,4,6};
+System.debug('numArr value before is : ' + numArr); 
+//numArr value before is : (1, 4, 6, 4, 6)
 
-List<Integer> list1=new List<Integer>{1,4,6,4,6};
-
-//we can not use for each loop if we want to modify the values
-// for(Integer each : list1) {
-//    each*=2;
-// }
-
-// System.debug(list1); 
-
-for(Integer i=0; i<list1.size() ;i++) {
-   list1[i]*=2; 
+//    - double the value of each item 
+for(Integer i=0; i<numArr.size() ;i++) {
+   numArr[i] *= 2 ; // or numArr[i] = numArr[i] * 2; 
 }
+//    - for example `{1,4,6,4,6}` => `{2,8,12,8,12}`
+System.debug('numArr value after is : ' + numArr); 
 
-System.debug(list1); 
+//numArr value after is : (2, 8, 12, 8, 12)

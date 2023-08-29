@@ -1,34 +1,33 @@
 // Get All the Account Name
-// and Name and Email Contacts assiciated with those account
-//from Account Object
-
-//SELECT Name, (SELECT Name, Email From Contacts)
-//FROM Account
-//ORDER BY CreatedDate ASC
-
-
-
-//Get All the Account Name
-// and Subject of Cases assiciated with those account
+// and Name and Email of Contacts associated with those account
 // from Account Object
 
-//SELECT Name, (SELECT Subject From Cases)
-//FROM Account
+//SELECT Name, (SELECT Name,Email FROM Contacts)
+//FROM Account 
 //ORDER BY CreatedDate ASC
 
 
-// Gett The Contact Name 
-// and Case Subject,Status of Cases associated with those account
-//from Contact object
+// Get All the Account Name
+// and Subject  of Cases associated with those account
+// from Account Object
 
-//SELECT  Name,(SELECT Subject, Status  FROM Cases)
+//SELECT Name, (SELECT Subject FROM Cases)
+// FROM Account 
+// ORDER BY CreatedDate ASC
+
+// Get All the Contact Name
+// and Case Subject,Status of Cases associated with those Contact
+// from Contact Object
+
+//SELECT Name, (SELECT Subject, Status FROM Cases)
 //FROM Contact
 
-// Gett The Contact Name 
-// and Book Name,Price of Book associated with those Contact
-//from Contact object
 
-//SELECT  Name, (SELECT Name,Price__c  FROM Books__r)
+// Get All the Contact Name
+// and Book Name,Price of Books associated with those Contact
+// from Contact Object
+
+//SELECT  Name, (SELECT Name,Price__c FROM Books__r)
 //FROM Contact
 
 // Get the Name of The Account 
@@ -48,18 +47,25 @@
 
 // Get All the Account Names if the child Contacts Last Name starts with F 
 // Also display all the contacts along with Account Name 
+// SELECT Name , (SELECT FirstName,LastName FROM Contacts  WHERE LastName LIKE 'F%')
+// FROM Account 
+// WHERE Id IN (SELECT AccountId FROM Contact WHERE LastName LIKE 'F%')
 
-//SELECT Name , (SELECT FirstName,LastName FROM Contacts  WHERE LastName LIKE 'F%')
-//FROM Account 
-//WHERE Id IN (SELECT AccountId FROM Contact WHERE LastName LIKE 'F%')
 
 
-// Get All the Account with Opportunity 
+// Get All The Account with Opportunity
 
-// STEP 1
-//SELECT  Name,AccountId, account.Name
-//FROM Opportunity
 
+// STEP 1 
+// SELECT AccountId
+// FROM Opportunity
+
+// This will return all the Account Name with Opportunity
+// SELECT Name
+// FROM Account
+// WHERE Id IN (  SELECT AccountId FROM Opportunity)
+
+// This will return all the Account Name without Opportunity
 SELECT Name
 FROM Account
-WHERE Id IN (SELECT AccountId FROM Opportunity)
+WHERE Id NOT IN (  SELECT AccountId FROM Opportunity)

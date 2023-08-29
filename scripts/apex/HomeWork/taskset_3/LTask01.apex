@@ -1,9 +1,61 @@
-Integer oddNumer = 1;
-for(Integer count =1 ; count <=100 ; count += 2  ){
-   System.debug(Count );
+// **# Task Set 3** 
+
+// 1. Write an Apex code to print all the odd numbers from 1 to 100 using for loop.    
+//         1,3,5,7.....99
+
+for(Integer i=1; i<100 ;i+=2) {
+    System.debug('odd number is : ' + i); 
 }
 
-
-
-
-
+/**
+odd number is : 1
+odd number is : 3
+odd number is : 5
+odd number is : 7
+odd number is : 9
+odd number is : 11
+odd number is : 13
+odd number is : 15
+odd number is : 17
+odd number is : 19
+odd number is : 21
+odd number is : 23
+odd number is : 25
+odd number is : 27
+odd number is : 29
+odd number is : 31
+odd number is : 33
+odd number is : 35
+odd number is : 37
+odd number is : 39
+odd number is : 41
+odd number is : 43
+odd number is : 45
+odd number is : 47
+odd number is : 49
+odd number is : 51
+odd number is : 53
+odd number is : 55
+odd number is : 57
+odd number is : 59
+odd number is : 61
+odd number is : 63
+odd number is : 65
+odd number is : 67
+odd number is : 69
+odd number is : 71
+odd number is : 73
+odd number is : 75
+odd number is : 77
+odd number is : 79
+odd number is : 81
+odd number is : 83
+odd number is : 85
+odd number is : 87
+odd number is : 89
+odd number is : 91
+odd number is : 93
+odd number is : 95
+odd number is : 97
+odd number is : 99
+ */

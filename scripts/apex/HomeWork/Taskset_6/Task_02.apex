@@ -23,12 +23,12 @@ System.debug('strList value is : ' + strList);
 //   for example original list values :  item1 , item2, item3, item4 
 //                    list values now :  item1 , item2, item3, item1 */
 
-// //shortcut varListWithStrValues 
+// shortcut varListWithStrValues 
 // List<String> strList = new List<String>{'item1','item2','item3','item4'};
 
 // String firstItem = strList.get(0) ; // array syntax  strList[0]
 
-// //shortcut varListWithStrValues 
+// shortcut varListWithStrValues 
 // List<String> strList = new List<String>{'item1','item2','item3','item4'};
 // System.debug('strList value is : ' + strList); 
 // String firstItem = strList.get(0) ; // array syntax  strList[0]

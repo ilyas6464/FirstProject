@@ -1,0 +1,39 @@
+<!-- sldsValidatorIgnore -->
+<template>
+    <lightning-card title="Financial Services Account Listing" icon-name="standard:account">
+        <div class="slds-m-around_medium">
+            <lightning-input
+                label="Filter by Account Name"
+                type="search"
+                onchange={handleSearch}
+            ></lightning-input>
+
+            <template lwc:if={filterAccounts}>
+                <lightning-datatable
+                    key-field="Id"
+                    data={filterAccounts}
+                    columns={columns}
+                    onsort={handleSort}
+                    sorted-by={sortedBy}
+                    sorted-direction={sortDirection}
+                    hide-checkbox-column
+                    draft-values={draftValues}
+                    onsave={handleSave}
+                    onrowaction={handleRowAction}
+                ></lightning-datatable> 
+            </template>
+            <template lwc:elseif={error}>
+                <c-error-panel
+                    errors={error}
+                    friendly-message="Error getting Accounts"
+                ></c-error-panel>
+            </template>
+            <template lwc:if={emptyResult}>
+                <c-error-panel
+                    friendly-message="No Financial Service account found"
+                ></c-error-panel>
+            </template>
+
+        </div>
+    </lightning-card>
+</template>

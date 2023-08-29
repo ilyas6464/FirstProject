@@ -1,0 +1,22 @@
+<!-- sldsValidatorIgnore -->
+<template>
+    <lightning-card title="Datatable With inline Edit" icon-name="custom:custom63">
+        <div class="slds-m-around_medium">
+            <template lwc:if={contacts.data}>
+                <lightning-datatable
+                    key-field="Id"
+                    data={contacts.data}
+                    columns={columns}
+                    onsave={handleSave}
+                    draft-values={draftValues}>
+                </lightning-datatable>
+            </template>
+            <template lwc:if={contacts.error}>
+                <c-error-panel
+                    errors={contacts.error}
+                    friendly-message="Error getting contacts"
+                ></c-error-panel>
+            </template>
+        </div>
+    </lightning-card>
+</template>
