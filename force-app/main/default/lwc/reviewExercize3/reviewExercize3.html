@@ -1,0 +1,14 @@
+<template>
+    <lightning-card  title="Repeating Elements" icon-name="standard:account">
+        <!-- add a div to add margin around -->
+        <div class="slds-var-m-around_medium">
+
+            <!-- display all the names in p tag without repeating the p tag -->
+            <!-- we use lwc foreach directive -->
+            <template for:each={companies} for:item="each">
+                <p key={each.Id}>   {each.name}   {each.city} </p>
+            </template>
+
+        </div>
+    </lightning-card>
+</template>
