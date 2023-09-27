@@ -10,6 +10,8 @@ export default class ReviewExercise2 extends LightningElement {
         // } else {
         //     return "TEXT FOR UNCHECKED!!!"
         // }
+        // if the return true = ?
+        // if the return false = :
         return (this.isChecked) ? "TEXT FOR CHECKED!!!" : "TEXT FOR UNCHECKED!!!"; 
 
     }
