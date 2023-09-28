@@ -1,0 +1,23 @@
+<template>
+    <lightning-card title="Wiring Data" icon-name="standard:contact">
+      <div class="slds-var-m-around_medium">
+        <!-- cons.data contains the array of contact object coming from apex method call
+           iterate over the array using for each directive -->
+        <!-- <template lwc:if={cons.data} for:each={cons.data} for:item="each">
+          <p key={each.Id}>{each.FirstName} {each.Phone}</p>
+        </template> -->
+  
+        <!-- cons contain the data part of wired data from apex 
+       since we wired the data into function and assign the value  -->
+        <template lwc:if={cons} for:each={cons} for:item="each">
+          <p key={each.Id}>{each.FirstName} {each.Phone}</p>
+        </template>
+  
+        <!-- if there is any error show the error -->
+        <template lwc:if={error}>
+          <p> Error message  {error.body.message}  </p>
+        </template>
+  
+      </div>
+    </lightning-card>
+  </template>
