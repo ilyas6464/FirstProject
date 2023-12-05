@@ -1,0 +1,28 @@
+<template>
+
+    <lightning-card title = "Trailhead Values Parent" icon-name = "utility:collection_alt">
+
+        <div class = "slds-var-m-around_medium">
+
+            <p>
+                Trailblazer Name: {name}
+            </p>
+
+        </div>
+
+        <div>
+
+            <lightning-button label = "Change the Point" onclick = {handleChange} class = "slds-m-left_x-small">
+                
+            </lightning-button>
+
+        </div>
+
+
+        <c-trailhead-point-child point = {parentPoint}>   </c-trailhead-point-child>
+
+        <c-trailhead-badge-child badge = {parentBadge}>   </c-trailhead-badge-child>
+
+    </lightning-card>
+
+</template>
